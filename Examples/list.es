@@ -23,7 +23,4 @@ skribi("Zmiana pierwszego elementu na 18 ",lista1)
 lista1 subtrahi lista1[0]
 skribi("Usuniecie pierwszego elementu listy ", lista1)
 
-variablo test_nazwy asigini 1
-skribi(test_nazwy)
-
 Adiau

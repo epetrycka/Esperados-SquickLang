@@ -311,13 +311,18 @@ class EsperadosVisitorImpl(EsperadosVisitor):
     
     def visitComparisonExpr(self, ctx: EsperadosParser.ComparisonExprContext):
         value = self.visit(ctx.additionExpr(0))
+        compliant = False
         for i in range(1, len(ctx.additionExpr())):
             additionExpr2 = self.visit(ctx.additionExpr(i))
             if ctx.EQUAL():
                 value = value == additionExpr2
             if ctx.INEQUAL():
                 value = value != additionExpr2
-            if type(value) != type(additionExpr2) and not isinstance(value, bool) and not isinstance(additionExpr2, bool):
+            if isinstance(value, (int, float, bool)) and isinstance(additionExpr2, (int, float, bool)):
+                compliant = True
+            if isinstance(value, str) and isinstance(additionExpr2, str):
+                compliant = True
+            if compliant == False:
                 self.raiseError(ctx, TypeError, f"Can't compare '{type(value).__name__}' and '{type(additionExpr2).__name__}'")
             else:
                 if ctx.GREATER():

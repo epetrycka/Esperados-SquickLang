@@ -10,8 +10,10 @@ skribi("test wyjatkow")
 :O skribi(x)
 
 :O comparisonExpr
-se (7 egala 7) {
+se (malvero egala vere) {
     skribi("ok")
+} alie {
+    skribi("tez ok")
 }
 
 :O funcio test(n = 5)
@@ -33,7 +35,7 @@ variablo listo lista2 asigini [1,2,4]
 :O skribi(lista[10])
 
 :O findVariable
-skribi(x)
+:O skribi(x)
 
 :P
 por ciu test en tests {
