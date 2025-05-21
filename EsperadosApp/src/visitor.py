@@ -320,7 +320,7 @@ class EsperadosVisitorImpl(EsperadosVisitor):
                 value = value != additionExpr2
             if isinstance(value, (int, float, bool)) and isinstance(additionExpr2, (int, float, bool)):
                 compliant = True
-            if isinstance(value, str) and isinstance(additionExpr2, str):
+            if isinstance(value, (str, bool)) and isinstance(additionExpr2, (str, bool)):
                 compliant = True
             if compliant == False:
                 self.raiseError(ctx, TypeError, f"Can't compare '{type(value).__name__}' and '{type(additionExpr2).__name__}'")

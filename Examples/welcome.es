@@ -1,4 +1,4 @@
-:O Program wypisuje Czesc i imiona z listy
+Program wypisuje Czesc i imiona z listy
 
 Saluton
 
@@ -20,7 +20,6 @@ difini salutu(listo: names){
             reveni malvero
         } alie {
             skribi("Saluton: ", name)
-            reveni vere
         }
     }
 }
